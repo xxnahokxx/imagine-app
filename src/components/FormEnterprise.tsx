@@ -1,6 +1,6 @@
 "use client"
 import { db } from '@/firebaseConfig';
-import { Enterprise } from '../utils/types';
+import { Enterprise } from '@/utils/types';
 import enterpriseValidation from '@/validations/enterpriseValidation'
 import {  addDoc, collection, doc, setDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react'

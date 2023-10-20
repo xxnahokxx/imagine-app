@@ -1,4 +1,4 @@
-export type Product = {
+export interface Product {
     id?: string
     enterprise?: string
     name?: string
@@ -7,7 +7,7 @@ export type Product = {
     description?: string
 }
 
-export type Enterprise = {
+export interface Enterprise {
     id?: string
     name?: string
     address?: string
