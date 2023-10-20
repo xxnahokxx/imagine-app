@@ -1,7 +1,7 @@
 
 
-import { Enterprise } from '@/components/FormEnterprise'
 import { messages } from '@/utils/messages'
+import { Enterprise } from '@/utils/types'
 
 const enterpriseValidation = (info: Enterprise) => {
     let error: Enterprise = {}
