@@ -2,7 +2,7 @@
 "use client"
 import { db } from '@/firebaseConfig'
 import { Enterprise } from '@/utils/types'
-import { collection, doc, getDocs, updateDoc } from 'firebase/firestore'
+import { AddPrefixToKeys, collection, doc, getDocs, updateDoc } from 'firebase/firestore'
 import { useParams, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
@@ -37,7 +37,7 @@ const EnterpriseIdPage = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (enterprise) {
-            await updateDoc(doc(db, "enterprise", params.id), enterprise)
+            await updateDoc(doc(db, "enterprise", params.id), enterprise as any)
             setTimeout(() => {
                 router.push("/enterprise")
             }, 2000)

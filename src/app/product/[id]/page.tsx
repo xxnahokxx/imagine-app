@@ -37,7 +37,7 @@ const ProductIdPage = () => {
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if (product) {
-            await updateDoc(doc(db, "product", params.id), product)
+            await updateDoc(doc(db, "product", params.id), product as any)
             setTimeout(() => {
                 router.push("/product")
             }, 2000)
