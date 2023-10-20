@@ -1,5 +1,3 @@
-
-
 export type Product = {
     id?: string
     enterprise?: string
