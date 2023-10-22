@@ -2,9 +2,11 @@
 import { db } from '@/firebaseConfig'
 import { Enterprise } from '@/utils/types'
 import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
+import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
 const EnterprisePage = () => {
+    const router = useRouter()
     const [company, setCompany] = useState<Enterprise[]>()
     const companyCollections = collection(db, "enterprise")
     const getCompany = async () => {
@@ -43,7 +45,7 @@ const EnterprisePage = () => {
                             <p>{el.phone}</p>
                         </div>
                         <div className='flex justify-between w-full'>
-                            <button className='btn-warning'>Edit</button>
+                            <button className='btn-warning' onClick={() => router.push(`/enterprise/${el.id}`)} >Edit</button>
                             <button className='btn-danger' onClick={() => deleteEnterprise(el.id ?? "")}>Delete</button>
                         </div>
                     </div>
